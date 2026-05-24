@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style></style>
+  </head>
+  <body>
+    <p id="js-show-number"></p>
+    <button onclick="playGame('Heads')">Heads</button>
+
+    <button onclick="playGame('Tails')">Tails</button>
+    <p id="js-generate"></p>
+    <script>
+      /*
+      let nums = [3, 7, 2, 9, 1];
+
+      function findMax(nums) {
+        let max = nums[0];
+
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] > max) {
+            max = nums[i];
+          }
+        }
+        return max;
+      }
+      console.log(findMax([2, 3, 4, 5, 6]));
+
+      function allInOne(nums) {
+        let total = 0;
+
+        for (let i = 0; i < nums.length; i++) {
+          total = total + nums[i];
+        }
+        return total;
+      }
+      console.log(allInOne([1, 2]));
+
+      function findEven(nums) {
+        let result = [];
+
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] % 2 === 0) {
+            result.push(nums[i]);
+          }
+        }
+        return result;
+      }
+      console.log(findEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]));
+
+      function changedMassive(nums) {
+        let result = [];
+
+        for (let i = nums.length - 1; i >= 0; i--) {
+          result.push(nums[i]);
+        }
+        return result;
+      }
+      console.log(changedMassive([1, 2, 3, 4, 5, 6, 7]));
+
+      */
+
+      function playGame(playerMove) {
+        const computerMove = pickComputerMove();
+        let result = "";
+
+        if (playerMove === "Heads") {
+          if (computerMove === "Heads") {
+            result = "win";
+          } else {
+            result = "Lose";
+          }
+        } else if (playerMove === "Tails") {
+          if (computerMove === "Tails") {
+            result = "win";
+          } else {
+            result = "Lose";
+          }
+        }
+
+        document.getElementById("js-show-number").innerHTML = result;
+
+        return result;
+      }
+
+      function pickComputerMove() {
+        let computerMove = "";
+        const randomNumber = Math.random();
+        if (randomNumber >= 0 && randomNumber <= 1 / 2) {
+          computerMove = "Heads";
+        } else if (randomNumber >= 1 / 2 && randomNumber < 1) {
+          computerMove = "Tails";
+        }
+
+        document.getElementById("js-generate").innerHTML =
+          `${randomNumber.toFixed(2)}`;
+        return computerMove;
+      }
+    </script>
+  </body>
+</html>
