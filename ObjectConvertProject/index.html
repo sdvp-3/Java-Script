@@ -32,7 +32,7 @@
         width: 770px;
         border: 1px solid white;
         border-radius: 8px;
-        padding: 30px;
+        padding: 50px;
         box-shadow: 1px 2px 10px rgb(0, 0, 0);
       }
       .alert {
@@ -49,6 +49,7 @@
         height: 100vh;
         font-family: Arial, sans-serif;
         display: flex;
+        background-color: rgb(56, 50, 50);
       }
 
       .label,
@@ -85,12 +86,12 @@
       .js-km,
       .js-mil,
       .js-meter,
-       .js-sq-met,
-       .js-sq-hect,
-       .js-sq-ft,
-       .js-m2,
-       .js-sq-m3,
-       .js-met {
+      .js-sq-met,
+      .js-sq-hect,
+      .js-sq-ft,
+      .js-m2,
+      .js-sq-m3,
+      .js-met {
         border: none;
         outline: none;
         color: white;
@@ -100,10 +101,11 @@
         width: 173.6px;
         height: 28px;
         padding-right: 8px;
+        background-color: rgb(38, 37, 37)
       }
       ::placeholder {
-  color: rgb(180, 180, 180);
-}
+        color: rgb(180, 180, 180);
+      }
 
       .js-km:hover,
       .js-mil:hover,
@@ -116,7 +118,7 @@
       .js-met:hover {
         box-shadow: 0px 0px 3px rgb(116, 85, 85);
         transition: 0.8s;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(52, 52, 52);
       }
 
       input[type="number"]::-webkit-inner-spin-button,
@@ -125,11 +127,54 @@
         height: 20px;
       }
 
-     
+      .js-mode {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 30px;
+        width: 60px;
+        border: none;
+        border-radius: 10px;
+        font-size: 10px;
+      }
+      .grid-container {
+        background-color: #241515;
+        border-color: #d2d1d1;
+        color: white;
+      }
+      .is-dark-mode {
+        background-color: #ffffff;
+        color: black;
+      }
+
+
+
+      /* Qo'shing */
+.is-dark-mode .js-km,
+.is-dark-mode .js-mil,
+.is-dark-mode .js-meter,
+.is-dark-mode .js-sq-met,
+.is-dark-mode .js-sq-hect,
+.is-dark-mode .js-sq-ft,
+.is-dark-mode .js-met,
+.is-dark-mode .js-m2,
+.is-dark-mode .js-sq-m3 {
+  color: black;
+  background-color: rgb(220, 220, 220);
+}
+
+/* Label rangi ham */
+.is-dark-mode .label,
+.is-dark-mode .label1,
+.is-dark-mode .label2 {
+  color: rgb(40, 60, 40);
+}
     </style>
   </head>
   <body>
     <div class="grid-container">
+      <button class="js-mode" onclick="darkMode()">Dark Mode</button>
       <div class="container">
         <!-- input dan keyin qo'shing -->
 
@@ -170,16 +215,16 @@
         <!-- input dan keyin qo'shing -->
 
         <p class="text2">M x M ↔ M&#178;</p>
-        <p class="label2">M</p>
+        <p class="label2">Side(a) M</p>
         <input type="number" placeholder="m" class="js-met" />
         <div class="label2">
-          M
+          Side(b) M
           <div class="sign">↕</div>
         </div>
         <input type="number" placeholder="m" class="js-m2" />
         <div class="label2">
           M&#178;
-          <div class="sign2">↕</div>
+          <div class="sign">↕</div>
         </div>
         <input type="number" placeholder="m&#178;" class="js-sq-m3" />
       </div>
@@ -194,6 +239,19 @@
     </div>
 
     <script>
+      function darkMode() {
+        const div = document.querySelector(".grid-container");
+        const btn = document.querySelector(".js-mode");
+
+        if (div.classList.contains("is-dark-mode")) {
+          div.classList.remove("is-dark-mode");
+          btn.textContent = "Dark Mode";
+        } else {
+          div.classList.add("is-dark-mode");
+          btn.textContent = "Light Mode";
+        }
+      }
+
       const kmInput = document.querySelector(".js-km");
       const milInput = document.querySelector(".js-mil");
       const meterInput = document.querySelector(".js-meter");
