@@ -7,13 +7,13 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: rgba(129, 92, 203, 0.748);
+        background-color: rgba(0, 0, 0, 0.748);
         color: white;
         padding-top: 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
-         background-image: url(jpg.png);
+      
       background-size: cover;       /* Rasmni ekran o'lchamiga moslab cho'zadi yoki kichraytiradi */
   background-position: center;   /* Rasmni markazga tekislaydi */
   background-repeat: no-repeat;  /* Rasm takrorlanib ketishining oldini oladi */
@@ -101,8 +101,7 @@
         padding-left: 13px;
         padding-right: 10px;
         display: block;
-        background-image: url(jpg.png);
-    
+        
       }
 
 
@@ -156,23 +155,24 @@ const operators = ["+", "-", "*", "/"];
 function addToCalculation(value) {
   const lastChar = calculation[calculation.length - 1];
 
-  // AGAR oxirgi belgi ham, yangi bosilgan belgi ham operator bo'lsa:
+
   if (operators.includes(value) && operators.includes(lastChar)) {
-    // Oxirgi operatorni yangisiga almashtiramiz
+   
     calculation = calculation.slice(0, -1) + value;
     
-    // Ekranni yangilaymiz va ranglarni to'g'rilaymiz
+  
     document.querySelector(".js-showcalculation").innerHTML = calculation;
     updateOperatorStyles(); 
-    return; // Funksiyani shu yerda to'xtatamiz
+    return; 
+    
   }
 
-  // Boshiga operator qo'yishni oldini olish
+  
   if (calculation === "" && operators.includes(value)) {
     return;
   }
   
-  // Tugmalar mantiqi (O'zgarishsiz qoldi)
+ 
   if (value === "=") {
     if (calculation !== "") {
       try {
@@ -189,22 +189,22 @@ function addToCalculation(value) {
     calculation += value;
   }
 
-  // Ekranga chiqarish (bo'sh bo'lsa 0 ko'rsatadi)
+ 
   document.querySelector(".js-showcalculation").innerHTML = calculation || "0";
   
-  // Operatorlar rangini yangilash
+ 
   updateOperatorStyles();
 }
 
-// Ranglarni boshqaruvchi yagona funksiya
+
 function updateOperatorStyles() {
-  // Avval hamma faol ranglarni o'chiramiz
+ 
   document.querySelector('.js-plus').classList.remove('is-on-p');
   document.querySelector('.js-minus').classList.remove('is-on-m');
   document.querySelector('.js-times').classList.remove('is-on-t');
   document.querySelector('.js-divide').classList.remove('is-on-d');
 
-  // Ekrandagi oxirgi belgiga qarab yashil rangni yoqamiz
+ 
   const lastChar = calculation[calculation.length - 1];
   if (lastChar === "+") document.querySelector('.js-plus').classList.add('is-on-p');
   if (lastChar === "-") document.querySelector('.js-minus').classList.add('is-on-m');
