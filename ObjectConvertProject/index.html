@@ -8,7 +8,7 @@
       .container3 {
         border: 1px solid #000000;
         border-radius: 8px;
-        box-shadow: 1px 2px 10px rgb(255, 255, 255);
+        box-shadow: 1px 2px 10px white;
       }
 
       .container,
@@ -33,8 +33,7 @@
         border: 1px solid white;
         border-radius: 8px;
         padding: 50px;
-        box-shadow: 1px 2px 10px rgb(255, 255, 255);
-        box-shadow: inset 0px 0px 10px rgb(255, 255, 255);
+        box-shadow: 1px 2px 10px rgb(0, 0, 0);
       }
       .alert {
         position: absolute;
@@ -102,7 +101,7 @@
         width: 173.6px;
         height: 28px;
         padding-right: 8px;
-        background-color: rgb(38, 37, 37);
+        background-color: rgb(38, 37, 37)
       }
       ::placeholder {
         color: rgb(180, 180, 180);
@@ -147,43 +146,38 @@
       .is-dark-mode {
         background-color: #ffffff;
         color: black;
-        box-shadow: inset 1px 2px 10px rgb(0, 0, 0);
       }
 
-      .is-dark-mode .js-km,
-      .is-dark-mode .js-mil,
-      .is-dark-mode .js-meter,
-      .is-dark-mode .js-sq-met,
-      .is-dark-mode .js-sq-hect,
-      .is-dark-mode .js-sq-ft,
-      .is-dark-mode .js-met,
-      .is-dark-mode .js-m2,
-      .is-dark-mode .js-sq-m3 {
-        color: black;
-        background-color: rgb(220, 220, 220);
-      }
-      .is-dark-mode .container,
-      .is-dark-mode .container2,
-      .is-dark-mode .container3 {
-        background-color: #ffffff;
-        color: black;
-        box-shadow: inset 1px 2px 10px rgb(0, 0, 0);
-      }
 
-      .is-dark-mode .label,
-      .is-dark-mode .label1,
-      .is-dark-mode .label2 {
-        color: rgb(40, 60, 40);
-      }
-      body{
-        background-color: #000000;
-      }
+
+      /* Qo'shing */
+.is-dark-mode .js-km,
+.is-dark-mode .js-mil,
+.is-dark-mode .js-meter,
+.is-dark-mode .js-sq-met,
+.is-dark-mode .js-sq-hect,
+.is-dark-mode .js-sq-ft,
+.is-dark-mode .js-met,
+.is-dark-mode .js-m2,
+.is-dark-mode .js-sq-m3 {
+  color: black;
+  background-color: rgb(220, 220, 220);
+}
+
+/* Label rangi ham */
+.is-dark-mode .label,
+.is-dark-mode .label1,
+.is-dark-mode .label2 {
+  color: rgb(40, 60, 40);
+}
     </style>
   </head>
   <body>
     <div class="grid-container">
       <button class="js-mode" onclick="darkMode()">Dark Mode</button>
       <div class="container">
+        <!-- input dan keyin qo'shing -->
+
         <p class="text">KM ↔ Miles ↔ Meters</p>
         <p class="label">Km</p>
         <input type="number" placeholder="km" class="js-km" />
@@ -200,6 +194,8 @@
       </div>
 
       <div class="container2">
+        <!-- input dan keyin qo'shing -->
+
         <p class="text1">M&#178; ↔ Hec ↔ Ft&#178;</p>
         <p class="label1">m&#178;</p>
         <input type="number" placeholder="m&#178;" class="js-sq-met" />
@@ -216,6 +212,8 @@
       </div>
 
       <div class="container3">
+        <!-- input dan keyin qo'shing -->
+
         <p class="text2">M x M ↔ M&#178;</p>
         <p class="label2">Side(a) M</p>
         <input type="number" placeholder="m" class="js-met" />
