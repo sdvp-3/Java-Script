@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.big-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  border: 1px solid white;
+  border-radius: 16px;
+  padding-top: 20px;
+  align-items: center;
+  column-gap: 10px;
+
+  justify-content: flex-start;/
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  /* shu yoq kerak edi */
+  width: 100%;
+  /* to'liq kenglik */
+}
+
+
+
+.reset-btn {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(34, 37, 34);
+  bottom: 15px;
+  cursor: pointer;
+
+}
+
+.reset-btn:hover {
+  background-color: rgb(59, 55, 55);
+  transition: 0.7s;
+  box-shadow: 0px 1px 6px rgb(255, 213, 0);
+  transform: scale(0.9);
+}
+
+.reset-btn:active {
+  box-shadow: 0px 1px 8px rgb(255, 255, 255);
+  transform: scale(0.7);
+}
+
+.rock,
+.paper,
+.scisorss {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: rgb(33, 32, 32);
+  cursor: pointer;
+  border: none;
+}
+
+.rock:hover,
+.paper:hover,
+.scisorss:hover {
+  background-color: rgb(59, 55, 55);
+  transition: 0.7s;
+  box-shadow: 0px 1px 6px rgb(255, 213, 0);
+  transform: scale(0.9);
+}
+
+.rock:active,
+.paper:active,
+.scisorss:active {
+  box-shadow: 0px 1px 8px rgb(255, 255, 255);
+  transform: scale(0.7);
+}
+
+
+.png-rock,
+.png-paper,
+.png-scisorss {
+
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
