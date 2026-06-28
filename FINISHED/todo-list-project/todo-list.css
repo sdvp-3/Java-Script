@@ -1,17 +1,17 @@
-body{
+body {
   display: flex;
-   justify-content: center;
- background-color: #000000;
-   margin: 0 auto;
-   padding-top: 40px;
-   gap: 0px;
-  
+  justify-content: center;
+  background-color: #000000;
+  margin: 0 auto;
+  padding-top: 40px;
+  gap: 0px;
+
 }
 
-.container{
-  display: flex;      
+.container {
+  display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   border: 1px solid rgb(108, 8, 222);
   box-shadow: 0px 2px 9px rgb(96, 23, 179), inset 0px 2px 20px rgb(96, 23, 179);
   border-radius: 16px;
@@ -25,85 +25,88 @@ body{
 }
 
 
-.todo-input{
+.todo-input {
   border-right: none;
-   color: blue;
+  color: blue;
   height: 30px;
   width: 200px;
-   padding-bottom: 0px;
-   padding-top: 0px;
-   border-radius: 16px 0px  0px 16px;
-   background-color: black;
- 
-cursor: pointer;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  border-radius: 16px 0px 0px 16px;
+  background-color: black;
+
+  cursor: pointer;
 }
-.todo-input:hover{
-  box-shadow:inset 0px 2px 10px 0px rgb(118, 47, 233);
+
+.todo-input:hover {
+  box-shadow: inset 0px 2px 10px 0px rgb(118, 47, 233);
   transition: 0.7s ease;
 }
 
-.todo-date{
+.todo-date {
   background-color: black;
   border-right: none;
-height: 30px;
-width: 150px ;
-box-sizing: border-box;
-padding-right: 2px;
+  height: 30px;
+  width: 150px;
+  box-sizing: border-box;
+  padding-right: 2px;
   color: blue;
   cursor: pointer;
- 
+
 }
 
-.todo-date:hover{
-   box-shadow:inset 0px 2px 10px 0px rgb(124, 90, 236);
+.todo-date:hover {
+  box-shadow: inset 0px 2px 10px 0px rgb(124, 90, 236);
   transition: 0.7s ease;
 }
-input::placeholder{
+
+input::placeholder {
   color: blue;
 }
 
 .todo-btn,
-.remove{
- background-color: black;
+.remove {
+  background-color: black;
   height: 30px;
   width: 100px;
-   border: 1px solid rgb(108, 8, 222);
+  border: 1px solid rgb(108, 8, 222);
   padding-bottom: 0px;
-   padding-top: 0px;
-   box-sizing: border-box;
-   border-radius: 0px 16px  16px 0px ;
-  display: flex;          
+  padding-top: 0px;
+  box-sizing: border-box;
+  border-radius: 0px 16px 16px 0px;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
- color: rgb(85, 85, 225);
+  color: rgb(85, 85, 225);
 
 }
 
-.remove{
+.remove {
   background-color: rgb(113, 11, 11);
 }
 
 
 .todo-btn:hover,
 .remove {
-   box-shadow:inset 0px 2px 10px 0px rgb(183, 64, 226);
- transition: 0.7s ease;
+  box-shadow: inset 0px 2px 10px 0px rgb(183, 64, 226);
+  transition: 0.7s ease;
 }
 
 
-.todo-wrapper{
+.todo-wrapper {
   display: flex;
- padding-right: 0px;
- width: 450px;
+  padding-right: 0px;
+  width: 450px;
   font-family: arial;
- 
-   align-items: center;
+
+  align-items: center;
   border-radius: 16px;
-  overflow: hidden; 
+  overflow: hidden;
   box-shadow: 1px 2px 10px 3px rgba(30, 0, 253, 0.953);
 
 }
+
 .todo-wrapper {
   box-shadow: 0px 2px 10px rgba(129, 70, 232, 0.8);
 }
@@ -112,87 +115,95 @@ input::placeholder{
 .todo-date,
 .todo-btn {
   height: 30px;
-  box-shadow: inset 0px 2px 10px rgba(79, 39, 224, 0.8); /* ichki soya */
-  
+  box-shadow: inset 0px 2px 10px rgba(79, 39, 224, 0.8);
+
+
 
 }
 
 
-input{
+input {
 
   font-size: 12px;
-   color: rgb(37, 37, 233);
+  color: rgb(37, 37, 233);
   outline: none;
   border: 1px solid blue;
-  
+
   padding-left: 10px;
   box-sizing: border-box;
 }
 
 .js-show {
-   display: flex;
+  display: flex;
   flex-direction: column;
   row-gap: 10px;
   padding: 0px;
   width: auto;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 
 
 .t1-span,
-.t2-span{
+.t2-span {
   display: flex;
   align-items: center;
- background-color: rgb(33, 33, 33);
+  background-color: rgb(33, 33, 33);
   height: 30px;
- box-shadow: inset 0px 2px 20px rgb(96, 23, 179);;
+  box-shadow: inset 0px 2px 20px rgb(96, 23, 179);
+  ;
 
 }
-.t1-span{
+
+.t1-span {
   background-color: rgb(33, 33, 33);
   height: 30px;
   width: 200px;
-   padding-bottom: 0px;
-   padding-top: 0px;
-   padding-left: 10px;
-   border-radius: 16px 0px  0px 16px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-left: 10px;
+  border-radius: 16px 0px 0px 16px;
 }
 
-.t2-span{
+.t2-span {
   height: 30px;
-width: 150px ;
-box-sizing: border-box;
-padding-right: 2px;
-padding-left: 5px;
- color: rgb(85, 85, 225);
+  width: 150px;
+  box-sizing: border-box;
+  padding-right: 2px;
+  padding-left: 5px;
+  color: rgb(85, 85, 225);
   cursor: pointer;
 }
 
-.divs{
- font-family: Arial, Helvetica, sans-serif;
-box-shadow: inset 0px 2px 20px rgb(96, 23, 179);;
+.divs {
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: inset 0px 2px 20px rgb(96, 23, 179);
+  ;
   display: flex;
   border: 1px solid rgb(95, 2, 246);
   border-radius: 16px;
-  grid-template-columns: 1fr 1fr auto;  /* fixed emas, flexible */
+  grid-template-columns: 1fr 1fr auto;
+ 
   align-items: center;
- justify-content: center;
-  width:100%;
-  box-sizing: border-box;  /* padding ichida qolsin */
- color: rgb(85, 85, 225);
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  color: rgb(85, 85, 225);
   padding-right: 0px;
-  
+
 }
 
 .divs {
-  column-gap: 0px; /* yoki butunlay o'chiring */
-  box-shadow: inset 0px 2px 20px rgb(96, 23, 179);;
+  column-gap: 0px;
+ 
+  box-shadow: inset 0px 2px 20px rgb(96, 23, 179);
+  ;
 }
-h1{
+
+h1 {
   color: rgb(79, 79, 192);
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
-
