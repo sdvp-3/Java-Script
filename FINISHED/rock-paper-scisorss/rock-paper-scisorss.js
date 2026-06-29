@@ -4,6 +4,32 @@ let score = JSON.parse(localStorage.getItem("js-score")) || {
   ties: 0,
 };
 
+document.querySelector(".js-rock").addEventListener("click", () => {
+  playGame("Rock");
+});
+document.querySelector(".js-paper").addEventListener("click", () => {
+  playGame("Paper");
+});
+document.querySelector(".js-scissors").addEventListener("click", () => {
+  playGame("Scissors");
+});
+
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === 'r') {
+    playGame("Rock");
+  }
+});
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === 'p') {
+    playGame("Paper");
+  }
+});
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === 's') {
+    playGame("Scissors");
+  }
+});
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
 
@@ -57,14 +83,14 @@ function scores() {
 
 function pickComputerMove() {
   const randomNumber = Math.random();
-  console.log(`Random number:${randomNumber}`)
+  console.log(`Random number:${randomNumber}`);
   let computerMove = "";
 
   if (randomNumber > 0 && randomNumber < 0.33) {
     computerMove = "Rock";
-  } else if (randomNumber >0.33 && randomNumber < 0.66) {
+  } else if (randomNumber > 0.33 && randomNumber < 0.66) {
     computerMove = "Paper";
-  } else if (randomNumber >0.66 && randomNumber < 0.99) {
+  } else if (randomNumber > 0.66 && randomNumber < 0.99) {
     computerMove = "Scissors";
   }
 

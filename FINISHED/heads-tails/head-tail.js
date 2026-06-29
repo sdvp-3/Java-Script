@@ -6,10 +6,32 @@ function resetScore() {
   document.querySelector(".js-result").innerHTML = "Won: 0, Lost: 0";
 }
 
+document.querySelector('.js-br').addEventListener('click', ()=>{
+  resetScore()
+})
+
 const score = JSON.parse(localStorage.getItem("score")) || {
   won: 0,
   lost: 0,
 };
+
+document.querySelector('.js-head').addEventListener('click', ()=>{
+  playGame('Heads')
+});
+document.querySelector('.js-tail').addEventListener('click', ()=>{
+  playGame('Tails')
+});
+
+document.body.addEventListener('keydown',(event)=>{
+  if(event.key==='h'){
+    playGame('Heads')
+  }
+});
+document.body.addEventListener('keydown',(event)=>{
+  if(event.key==='t'){
+    playGame('Tails')
+  }
+})
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -49,6 +71,10 @@ function pickComputerMove() {
 
 const btn = document.querySelector(".button2");
 
+document.querySelector('.js-bf').addEventListener('click' , ()=>{
+  flipCoin()
+})
+
 let currentDeg = 0;
 btn.addEventListener("click", function () {
   let deg = Math.floor(Math.random() * 1440) + 1440;
@@ -67,7 +93,7 @@ btn.addEventListener("click", function () {
     document.querySelector(".coin").style.transform = `rotateX(0deg)`;
     currentDeg = 0;
     setTimeout(() => {
-      document.querySelector(".coin").style.transition = "transform 0.7s ease";
+      document.querySelector(".coin").style.transition = "transform 0.9s ease";
     }, 10);
   }, 700);
 });

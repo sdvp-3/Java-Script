@@ -7,13 +7,13 @@
   <body>
     <div class="big-container">
       <div class="container">
-        <button onclick="playGame('Rock')" class="rock">
+        <button class="rock js-rock">
           <img class="png-rock" src="png/rock.png" />
         </button>
-        <button onclick="playGame('Paper')" class="paper">
+        <button class="paper js-paper">
           <img class="png-paper" src="png/paper.png" />
         </button>
-        <button onclick="playGame('Scissors')" class="scisorss">
+        <button class="scisorss js-scissors">
           <img class="png-scisorss" src="png/scisorss.png" />
         </button>
       </div>
@@ -29,7 +29,6 @@
           score.ties = 0;
           localStorage.removeItem('score');
           scores();
-         
         "
         class="reset-btn"
       >
