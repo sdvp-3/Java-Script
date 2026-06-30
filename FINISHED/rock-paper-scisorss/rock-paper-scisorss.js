@@ -1,3 +1,6 @@
+let isAutoPlaying = false;
+let intervalId;
+
 let score = JSON.parse(localStorage.getItem("js-score")) || {
   wins: 0,
   losses: 0,
@@ -13,25 +16,37 @@ document.querySelector(".js-paper").addEventListener("click", () => {
 document.querySelector(".js-scissors").addEventListener("click", () => {
   playGame("Scissors");
 });
+document.querySelector(".js-auto").addEventListener("click", autoPlay);
 
 document.body.addEventListener("keydown", (event) => {
-  if (event.key === 'r') {
+  if (event.key === "r" || event.key === "R") {
     playGame("Rock");
-  }
-});
-document.body.addEventListener("keydown", (event) => {
-  if (event.key === 'p') {
+  } else if (event.key === "p" || event.key === "P") {
     playGame("Paper");
-  }
-});
-document.body.addEventListener("keydown", (event) => {
-  if (event.key === 's') {
+  } else if (event.key === "s" || event.key === "S") {
     playGame("Scissors");
+  } else if (event.key === "a" || event.key === "A") {
+    autoPlay(); // Avtomat rejim mantiqi
   }
 });
+
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(() => {
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+  }
+}
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
+  const playerImageSrc = moveImgs[playerMove];
+  const computerImageSrc = moveImgs[computerMove];
 
   let result = "";
 
@@ -72,15 +87,22 @@ function playGame(playerMove) {
   scores();
   document.querySelector(".js-result").innerHTML = result;
 
-  document.querySelector(".js-move").innerHTML =
-    `👤:${playerMove}-${computerMove}:🖥️`;
+  document.querySelector(".js-move").innerHTML = `👤${playerImageSrc}
+    VS
+    ${computerImageSrc}💻`;
 }
+
+const moveImgs = {
+  Rock: ' <img class="png-rock1" src="png/rock.png" />',
+  Paper: ' <img class="png-paper1" src="png/paper.png" />',
+  Scissors: ' <img class="png-scissors1" src="png/scisorss.png" />',
+};
 
 function scores() {
   document.querySelector(".js-score").innerHTML =
     `🏆:${score.wins},❌:${score.losses},🤝:${score.ties}`;
 }
-
+ 
 function pickComputerMove() {
   const randomNumber = Math.random();
   console.log(`Random number:${randomNumber}`);

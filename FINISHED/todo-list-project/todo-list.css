@@ -136,11 +136,74 @@ input {
 .js-show {
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
-  padding: 0px;
-  width: auto;
-  box-sizing: border-box;
+  row-gap: 15px;
+  border: none;
+  border-radius: 16px;
+  margin-top: 20px;
+overflow: hidden;
 }
+
+.todo-row {
+  display: grid;
+  color: blue;
+  grid-template-columns: 200px 150px 100px;
+  align-items: center;
+  justify-content: space-between;
+ column-gap: 2px;
+  border-radius: 16px;
+ /* ...boshqa kodingiz... */
+  background: transparent !important; 
+  background-color: transparent !important;
+ overflow: hidden;
+border: none;
+  background-color: rgb(18, 18, 19);
+
+}
+
+/* Bu kod faqat ekran kengligi 500px yoki undan kichik bo'lganda ishlaydi (Telefonlar uchun) */
+@media (max-width: 500px) {
+  .todo-row {
+    /* Ustunlarni bitta qatorga aylantiramiz */
+    grid-template-columns: 1fr; 
+    row-gap: 10px; /* Elementlar orasida vertikal masofa */
+    text-align: center; /* Matnlarni o'rtaga tekislash */
+    border-radius: 12px;
+  }
+
+  .remove {
+    width: 100%; /* Tugma to'liq kenglikni egallaydi */
+    padding: 8px 0;
+  }
+}
+
+
+.name {
+  white-space: nowrap;      /* Matnni yangi qatorga o'tishga yo'l qo'ymaydi, bir qatorda ushlaydi */
+  overflow: hidden;         /* Katakdan tashqariga chiqqan qismini yashiradi */
+  text-overflow: ellipsis;
+    box-shadow: inset 0px 2px 10px rgba(79, 39, 224, 0.8);
+  display: flex;
+  border-radius: 16px;
+  align-items: center;
+  border-right: 1px solid blue;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.date {
+    box-shadow: inset 0px 2px 10px rgba(79, 39, 224, 0.8);
+  display: flex;
+  align-items: center;
+  border-left: 1px solid blue;
+  height: 30px;
+  padding-left: 5px;
+   border-radius: 16px;
+}.remove{
+   border-radius: 16px;
+}
+
+
+
 
 
 
@@ -183,7 +246,7 @@ input {
   border: 1px solid rgb(95, 2, 246);
   border-radius: 16px;
   grid-template-columns: 1fr 1fr auto;
- 
+
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -196,7 +259,7 @@ input {
 
 .divs {
   column-gap: 0px;
- 
+
   box-shadow: inset 0px 2px 20px rgb(96, 23, 179);
   ;
 }
